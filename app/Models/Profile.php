@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BlogPost extends Model
+class Profile extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'content'];
 
-    public function comment()
+    protected $fillable = ['author_id'];
+
+    public function author()
     {
-        return $this->hasMany(Comment::class);
+        return $this->belongsTo(Author::class);
     }
 }

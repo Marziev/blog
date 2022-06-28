@@ -9,5 +9,7 @@
     @if ((new Carbon\Carbon())->diffInMinutes($post->created_at) < 5 )
         <strong>New!</strong>
     @endif
-    <span><a href="{{ route('posts.edit', $post->id) }}">Edit</a></span>
+    <a href="{{ route('posts.edit', ['post' => $post->id]) }}" class="btn btn-primary">
+        Edit
+    </a>
 @endsection('content')

@@ -10,7 +10,7 @@ class BlogPost extends Model
     use HasFactory;
     protected $fillable = ['title', 'content'];
 
-    public function comment()
+    public function comments()
     {
         return $this->hasMany(Comment::class);
     }

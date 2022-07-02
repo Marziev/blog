@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = BlogPost::all();
+        $posts = BlogPost::withCount('comments')->get();
         return view('posts.index', ['posts' => $posts]);
     }
 
